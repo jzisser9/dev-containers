@@ -1,0 +1,45 @@
+// .devcontainer/devcontainer.json
+// This file defines the Dev Container configuration.
+{
+  "name": "Flutter Dev Container",
+
+  // Use a Dockerfile to define the container image.
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      // Define versions here to easily update them later
+      "FLUTTER_VERSION": "3.22.2"
+    }
+  },
+
+  // Configure VS Code settings and extensions for the container.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "dart.flutterSdkPath": "/opt/flutter",
+        // Enable Flutter web support by default
+        "dart.flutterWebRenderer": "html"
+      },
+      "extensions": [
+        "Dart-Code.flutter",
+        "Dart-Code.dart-code",
+        "GitHub.copilot",
+        "eamodio.gitlens",
+        "Gruntfuggly.todo-tree"
+      ]
+    }
+  },
+
+  // Forward ports for Flutter web and other services.
+  "forwardPorts": [
+    // Flutter web port
+    3000
+  ],
+
+  // Run a command after the container is created to verify the setup.
+  "postCreateCommand": "flutter doctor",
+
+  // Specify the user the container will run as.
+  "remoteUser": "vscode"
+}
