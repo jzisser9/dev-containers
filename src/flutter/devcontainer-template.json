@@ -3,5 +3,6 @@
     "version": "1.0.0",
     "name": "Flutter Dev Environment",
     "description": "A reusable development container for Flutter with the Android SDK.",
-    "documentationURL": "https://github.com/jzisser9/dev-containers/tree/main/src/flutter"
+    "documentationURL": "https://github.com/jzisser9/dev-containers/tree/main/src/flutter",
+    "platforms": [ "Any" ]
 }
